@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="30dp"
+    android:background="#FFFFFF"
+    tools:context=".pertemuan_3.WelcomeActivity">
+
+    <TextView
+        android:id="@+id/tvWelcomeApp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome to Faqih Apps"
+        android:textColor="#000000"
+        android:textSize="28sp"
+        android:fontFamily="@font/inter_bold"
+        android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvDesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Selamat datang di aplikasi Faqih-Blackhawk. Ini adalah halaman hasil dari proses login pada modul pertemuan 3."
+        android:textAlignment="center"
+        android:textColor="#757575"
+        android:textSize="14sp"
+        android:fontFamily="@font/inter_regular"
+        app:layout_constraintTop_toBottomOf="@id/tvWelcomeApp" />
+
+    <Button
+        android:id="@+id/btnNext"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginBottom="84dp"
+        android:backgroundTint="#2196F3"
+        android:fontFamily="@font/inter_bold"
+        android:text="Next"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="30dp" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="199dp"
+        android:layout_height="244dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvWelcomeApp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.716"
+        app:srcCompat="@drawable/gambar_tangan" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
