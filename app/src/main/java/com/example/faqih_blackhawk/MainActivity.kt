@@ -12,6 +12,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        //menerima data intent
+        val judul = intent.getStringExtra("JUDUL")
+        val deskripsi = intent.getStringExtra("DESKRIPSI")
+
+        // Memunculkan judul dan deskripsi yang dibawa dari Dashboard lewat Toast
+        if (judul != null && deskripsi != null) {
+            Toast.makeText(this, "Halaman: $judul\n$deskripsi", Toast.LENGTH_LONG).show()
+        }
+
         // --- DEKLARASI KOMPONEN SEGITIGA ---
         val etAlas = findViewById<EditText>(R.id.etAlas)
         val etTinggiSegitiga = findViewById<EditText>(R.id.etTinggiSegitiga)
