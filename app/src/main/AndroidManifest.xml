@@ -12,13 +12,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Faqihblackhawk">
         <activity
+            android:name=".pertemuan_3.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".pertemuan_5.WebViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".pertemuan_5.FifthActivity"
+            android:exported="false" />
+        <activity
+            android:name=".pertemuan_2.KalkulatorActivity"
+            android:exported="false" />
+        <activity
             android:name=".pertemuan_4.CustomDuaActivity"
             android:exported="false" />
         <activity
             android:name=".pertemuan_4.CustomSatuActivity"
             android:exported="false" />
         <activity
-            android:name=".pertemuan_3.LoginActivity"
+            android:name=".pertemuan_4.DashboardP4Activity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
@@ -27,7 +39,7 @@
             android:name=".pertemuan_3.WelcomeActivity"
             android:exported="false" />
         <activity
-            android:name=".pertemuan_4.DashboardP4Activity"
+            android:name=".SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
