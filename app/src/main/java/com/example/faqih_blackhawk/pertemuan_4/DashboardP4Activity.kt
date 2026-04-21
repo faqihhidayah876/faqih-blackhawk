@@ -14,6 +14,7 @@ import com.example.faqih_blackhawk.databinding.ActivityDashboardP4Binding
 import com.example.faqih_blackhawk.pertemuan_2.KalkulatorActivity
 import com.example.faqih_blackhawk.pertemuan_3.LoginActivity
 import com.example.faqih_blackhawk.pertemuan_5.FifthActivity
+import com.example.faqih_blackhawk.pertemuan_5.WebViewActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
 
@@ -66,9 +67,9 @@ class DashboardP4Activity : AppCompatActivity() {
         }
         // Tombol 4: ke fitur Toolbar & WebView
         binding.btn4.setOnClickListener {
-            val intent = Intent(this, FifthActivity::class.java)
-            intent.putExtra("JUDUL", "Custom UI 2")
-            intent.putExtra("DESKRIPSI", "Tampilan Splash Screen ala Figma.")
+            val intent = Intent(this, WebViewActivity::class.java)
+            intent.putExtra("JUDUL", "WebView")
+            intent.putExtra("DESKRIPSI", "Tampilan WebView.")
             startActivity(intent)
         }
 

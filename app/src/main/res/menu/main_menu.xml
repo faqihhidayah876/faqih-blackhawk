@@ -12,16 +12,4 @@
         android:title="Settings"
         android:icon="@android:drawable/ic_menu_preferences"
         app:showAsAction="never" />
-
-    <item
-        android:id="@+id/action_filter"
-        android:title="Filter Kategori"
-        app:showAsAction="always">
-        <menu>
-            <group android:checkableBehavior="all">
-                <item android:id="@+id/filter_makanan" android:title="Makanan" android:checked="true" />
-                <item android:id="@+id/filter_minuman" android:title="Minuman" />
-            </group>
-        </menu>
-    </item>
 </menu>
