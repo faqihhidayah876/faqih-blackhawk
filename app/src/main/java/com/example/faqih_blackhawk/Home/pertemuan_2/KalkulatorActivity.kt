@@ -1,4 +1,4 @@
-package com.example.faqih_blackhawk.pertemuan_2
+package com.example.faqih_blackhawk.Home.pertemuan_2
 
 import android.os.Bundle
 import android.view.MenuItem
@@ -8,6 +8,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.faqih_blackhawk.R
@@ -27,7 +28,7 @@ class KalkulatorActivity : AppCompatActivity() {
         val judul = intent.getStringExtra("JUDUL")
         val deskripsi = intent.getStringExtra("DESKRIPSI")
 
-        val toolbar = findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
+        val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
         supportActionBar?.apply {
             title = judul ?: "Kalkulator"

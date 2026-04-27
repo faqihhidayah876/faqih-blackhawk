@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    tools:context=".pertemuan_4.CustomSatuActivity">
+    tools:context=".Home.pertemuan_4.CustomSatuActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"

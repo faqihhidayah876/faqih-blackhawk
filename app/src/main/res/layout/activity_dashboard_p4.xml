@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/blue_light"
-    tools:context=".pertemuan_4.DashboardP4Activity">
+    tools:context=".Home.pertemuan_4.DashboardP4Activity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/AppBarLayout"

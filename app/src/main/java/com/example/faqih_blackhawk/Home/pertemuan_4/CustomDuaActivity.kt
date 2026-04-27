@@ -1,4 +1,4 @@
-package com.example.faqih_blackhawk.pertemuan_4
+package com.example.faqih_blackhawk.Home.pertemuan_4
 
 import android.os.Bundle
 import android.view.MenuItem
@@ -7,16 +7,16 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.faqih_blackhawk.R
-import com.example.faqih_blackhawk.databinding.ActivityCustomSatuBinding
+import com.example.faqih_blackhawk.databinding.ActivityCustomDuaBinding
+import com.example.faqih_blackhawk.databinding.ActivityFifthBinding
 
-class CustomSatuActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityCustomSatuBinding
+class CustomDuaActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityCustomDuaBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        binding = ActivityCustomSatuBinding.inflate(layoutInflater)
+        binding = ActivityCustomDuaBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -26,11 +26,11 @@ class CustomSatuActivity : AppCompatActivity() {
         val judul = intent.getStringExtra("JUDUL")
         val deskripsi = intent.getStringExtra("DESKRIPSI")
 
-        val toolbar = findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
-        setSupportActionBar(toolbar)
+        // Setup Toolbar
+        setSupportActionBar(binding.toolbar)
         supportActionBar?.apply {
-            title = judul ?: "Kalkulator"
-            subtitle = deskripsi ?: "Menghitung luas dan volume"
+            title = judul ?: "Custom UI 2"
+            subtitle = "Splash Screen"
             setDisplayHomeAsUpEnabled(true)
         }
 

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:padding="30dp"
     android:background="#FFFFFF"
-    tools:context=".pertemuan_3.WelcomeActivity">
+    tools:context=".Home.pertemuan_3.WelcomeActivity">
 
     <TextView
         android:id="@+id/tvWelcomeApp"

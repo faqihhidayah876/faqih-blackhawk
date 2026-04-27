@@ -1,4 +1,4 @@
-package com.example.faqih_blackhawk.pertemuan_3
+package com.example.faqih_blackhawk.Home.pertemuan_3
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,9 +8,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.edit
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.faqih_blackhawk.BaseActivity
 import com.example.faqih_blackhawk.R
 import com.example.faqih_blackhawk.databinding.ActivityLoginBinding // Import ini wajib
-import com.example.faqih_blackhawk.pertemuan_4.DashboardP4Activity
+import com.example.faqih_blackhawk.Home.pertemuan_4.DashboardP4Activity
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
@@ -42,7 +43,7 @@ class LoginActivity : AppCompatActivity() {
                     putString("username", username)
                 }
 
-                val intent = Intent(this, DashboardP4Activity::class.java)
+                val intent = Intent(this, BaseActivity::class.java)
                 startActivity(intent)
                 finish()
             } else {

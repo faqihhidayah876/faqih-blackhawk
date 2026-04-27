@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/blue_light"
-    tools:context=".pertemuan_4.CustomDuaActivity">
+    tools:context=".Home.pertemuan_4.CustomDuaActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"

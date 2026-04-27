@@ -7,8 +7,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
-import com.example.faqih_blackhawk.pertemuan_3.LoginActivity
-import com.example.faqih_blackhawk.pertemuan_4.DashboardP4Activity
+import com.example.faqih_blackhawk.Home.pertemuan_3.LoginActivity
+import com.example.faqih_blackhawk.Home.pertemuan_4.DashboardP4Activity
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -27,7 +27,7 @@ class SplashScreenActivity : AppCompatActivity() {
 
         val isLogin = sharedPref.getBoolean("isLogin", false)
         if (isLogin) {
-            val intent = Intent(this, DashboardP4Activity::class.java)
+            val intent = Intent(this, BaseActivity::class.java)
             startActivity(intent)
             finish()
 

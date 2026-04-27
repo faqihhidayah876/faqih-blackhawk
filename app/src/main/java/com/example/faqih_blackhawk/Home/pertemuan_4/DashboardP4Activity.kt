@@ -1,4 +1,4 @@
-package com.example.faqih_blackhawk.pertemuan_4
+package com.example.faqih_blackhawk.Home.pertemuan_4
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,13 +8,11 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.faqih_blackhawk.MainActivity
 import com.example.faqih_blackhawk.R
 import com.example.faqih_blackhawk.databinding.ActivityDashboardP4Binding
-import com.example.faqih_blackhawk.pertemuan_2.KalkulatorActivity
-import com.example.faqih_blackhawk.pertemuan_3.LoginActivity
-import com.example.faqih_blackhawk.pertemuan_5.FifthActivity
-import com.example.faqih_blackhawk.pertemuan_5.WebViewActivity
+import com.example.faqih_blackhawk.Home.pertemuan_2.KalkulatorActivity
+import com.example.faqih_blackhawk.Home.pertemuan_3.LoginActivity
+import com.example.faqih_blackhawk.Home.pertemuan_5.WebViewActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
 
