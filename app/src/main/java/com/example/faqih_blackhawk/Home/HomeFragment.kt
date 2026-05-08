@@ -13,9 +13,11 @@ import com.example.faqih_blackhawk.Home.pertemuan_3.LoginActivity
 import com.example.faqih_blackhawk.Home.pertemuan_4.CustomDuaActivity
 import com.example.faqih_blackhawk.Home.pertemuan_4.CustomSatuActivity
 import com.example.faqih_blackhawk.Home.pertemuan_5.WebViewActivity
+import com.example.faqih_blackhawk.Home.pertemuan_8.DaftarAdminFragment
 import com.example.faqih_blackhawk.databinding.FragmentHomeBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
+import com.example.faqih_blackhawk.R
 
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
@@ -69,6 +71,17 @@ class HomeFragment : Fragment() {
             intent.putExtra("JUDUL", "WebView")
             intent.putExtra("DESKRIPSI", "Tampilan WebView.")
             startActivity(intent)
+        }
+        binding.btnSearchDesa.setOnClickListener {
+            val intent = android.content.Intent(requireContext(), com.example.faqih_blackhawk.Home.pertemuan_8.SearchDesaActivity::class.java)
+            startActivity(intent)
+        }
+        
+        binding.btnDaftarAdmin.setOnClickListener {
+            requireActivity().supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, DaftarAdminFragment()) // R.id.fragment_container adalah wadah di BaseActivity
+                .addToBackStack(null) // Agar bisa di-back
+                .commit()
         }
 
         // Tombol 4: Logout dengan Alert Dialog

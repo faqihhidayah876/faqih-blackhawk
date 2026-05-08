@@ -5,9 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
+import com.example.faqih_blackhawk.Home.pertemuan_8.SettingsFragment
 import com.example.faqih_blackhawk.R
-import com.example.faqih_blackhawk.databinding.FragmentHomeBinding
 import com.example.faqih_blackhawk.databinding.FragmentProfileBinding
 
 class ProfileFragment : Fragment() {
@@ -17,18 +16,38 @@ class ProfileFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
         return binding.root
     }
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-        (requireActivity() as AppCompatActivity).setSupportActionBar(binding.toolbar)
-        (requireActivity() as AppCompatActivity).supportActionBar?.apply {
-            title = "Profile"
-        }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // 1. Set Title langsung (TANPA setSupportActionBar)
+        binding.toolbar.title = "Profile"
+
+        // 2. Tampilkan Menu Titik Tiga
+        binding.toolbar.inflateMenu(R.menu.main_menu)
+
+        // 3. Tombol Back
         binding.toolbar.setNavigationOnClickListener {
             requireActivity().onBackPressedDispatcher.onBackPressed()
+        }
+
+        // 4. Aksi saat Menu Titik Tiga diklik
+        binding.toolbar.setOnMenuItemClickListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.action_settings -> {
+                    // Pindah ke SettingsFragment
+                    requireActivity().supportFragmentManager.beginTransaction()
+                        .replace(R.id.fragment_container, SettingsFragment())
+                        .addToBackStack(null)
+                        .commit()
+                    true
+                }
+                else -> false
+            }
         }
     }
 }
