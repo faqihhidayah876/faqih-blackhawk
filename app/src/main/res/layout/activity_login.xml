@@ -75,12 +75,12 @@
         app:layout_constraintTop_toBottomOf="@+id/etUsername" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/tvKeRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="30dp"
-        android:text="Forget your password ?"
+        android:text="Belum punya akun? Daftar Disini"
         android:textColor="#2196F3"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -88,11 +88,9 @@
 
     <Button
         android:id="@+id/btnLogin"
-        android:layout_width="0dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="30dp"
+        android:layout_width="336dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="36dp"
         android:backgroundTint="#2196F3"
         android:fontFamily="@font/inter_bold"
         android:text="Login"
@@ -101,18 +99,7 @@
         app:cornerRadius="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView2" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Dont have an account ?"
-        android:textColor="#000000"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
+        app:layout_constraintTop_toBottomOf="@+id/tvKeRegister" />
 
     <ImageView
         android:id="@+id/imageView"

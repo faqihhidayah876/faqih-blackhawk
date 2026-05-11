@@ -2,6 +2,7 @@ package com.example.faqih_blackhawk.Home.pertemuan_3
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -12,6 +13,8 @@ import com.example.faqih_blackhawk.BaseActivity
 import com.example.faqih_blackhawk.R
 import com.example.faqih_blackhawk.databinding.ActivityLoginBinding // Import ini wajib
 import com.example.faqih_blackhawk.Home.pertemuan_4.DashboardP4Activity
+import com.example.faqih_blackhawk.Home.quiz.RegisterActivity
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
@@ -29,31 +32,43 @@ class LoginActivity : AppCompatActivity() {
 
         val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
 
+        binding.tvKeRegister.setOnClickListener {
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
+        }
+
         binding.btnLogin.setOnClickListener {
-            //Mengambil value dari inputNama dan menampilkan di Logcat
-//            val nomor = binding.inputNoTujuan.text
-//            Toast.makeText(this, "Pesan berhasil dikirim ke $nomor", Toast.LENGTH_SHORT).show()
-            val username = binding.etUsername.text.toString().trim()
-            val password = binding.etPassword.text.toString().trim()
+            val inputUser = binding.etUsername.text.toString().trim()
+            val inputPass = binding.etPassword.text.toString().trim()
 
-            if (username == password) {
+            // Ambil data akun yang sudah sukses divalidasi (Soal b2)
+            val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
+            val savedUser = sharedPref.getString("REG_USERNAME", "")
+            val savedPass = sharedPref.getString("REG_PASSWORD", "")
 
-                sharedPref.edit {
-                    putBoolean("isLogin", true)
-                    putString("username", username)
-                }
+            // Rule Soal b3:
+            // 1. username == password
+            // 2. username & password sesuai yang tersimpan di SP
+            val rulePraktikum = (inputUser == inputPass && inputUser.isNotEmpty())
+            val ruleRegistrasi = (inputUser == savedUser && inputPass == savedPass && savedUser!!.isNotEmpty())
+
+            if (rulePraktikum || ruleRegistrasi) {
+                // Berhasil: Arahkan ke halaman Home (BaseActivity)
+                val editor = sharedPref.edit()
+                editor.putBoolean("isLogin", true)
+                editor.apply()
 
                 val intent = Intent(this, BaseActivity::class.java)
                 startActivity(intent)
                 finish()
             } else {
-                AlertDialog.Builder(this)
+                // Gagal: Tampilkan pesan error dengan MaterialAlertDialog
+                MaterialAlertDialogBuilder(this)
                     .setTitle("Login Gagal")
-                    .setMessage("Silahkan coba lagi")
-                    .setPositiveButton("OK") { dialog, _ ->
+                    .setMessage("Username atau Password yang Anda masukkan salah atau belum terdaftar!")
+                    .setPositiveButton("Tutup") { dialog, _ ->
                         dialog.dismiss()
                     }
-                    .setCancelable(false)
                     .show()
             }
         }

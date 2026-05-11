@@ -14,6 +14,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Faqihblackhawk">
         <activity
+            android:name=".Home.quiz.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ValidationActivity"
+            android:exported="false" />
+        <activity
             android:name=".Home.pertemuan_8.SearchDesaActivity"
             android:exported="false" />
         <activity
