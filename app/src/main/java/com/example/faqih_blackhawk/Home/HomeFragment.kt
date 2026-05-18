@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import com.example.faqih_blackhawk.Home.package_10.BinaDesaActivity
 import com.example.faqih_blackhawk.Home.pertemuan_2.KalkulatorActivity
 import com.example.faqih_blackhawk.Home.pertemuan_3.LoginActivity
 import com.example.faqih_blackhawk.Home.pertemuan_4.CustomDuaActivity
@@ -37,10 +38,6 @@ class HomeFragment : Fragment() {
         (requireActivity() as AppCompatActivity).setSupportActionBar(binding.toolbar)
         (requireActivity() as AppCompatActivity).supportActionBar?.apply {
             title = "Home"
-        }
-
-        binding.toolbar.setNavigationOnClickListener {
-            requireActivity().onBackPressedDispatcher.onBackPressed()
         }
 
         binding.btnBangunRuang.setOnClickListener {
@@ -83,6 +80,25 @@ class HomeFragment : Fragment() {
                 .addToBackStack(null) // Agar bisa di-back
                 .commit()
         }
+
+        binding.btnPertemuan10.setOnClickListener {
+            val intent = Intent(requireContext(), BinaDesaActivity::class.java)
+            startActivity(intent)
+        }
+
+        // 1. Siapkan daftar link/URL gambar (Bisa diganti dengan resource drawable lokal)
+        val listBanner = listOf(
+            "https://images.unsplash.com/photo-1530878902700-5ad4f9e4c318?q=80&w=1934&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://plus.unsplash.com/premium_photo-1661962862470-a03bcc2fb415?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800"  // project mu nanti
+        )
+
+        // 2. Pasang Adapter
+        val bannerAdapter = BannerHomeAdapter(listBanner)
+
+        // 3. Set Adapter ke RecyclerView
+        // (LayoutManager sudah kita atur sebagai horizontal langsung dari XML tadi)
+        binding.rvBannerHome.adapter = bannerAdapter
 
         // Tombol 4: Logout dengan Alert Dialog
         binding.btnLogout.setOnClickListener {

@@ -53,6 +53,9 @@
             android:name=".Home.pertemuan_3.WelcomeActivity"
             android:exported="false" />
         <activity
+            android:name=".Home.package_10.BinaDesaActivity"
+            android:exported="false" />
+        <activity
             android:name=".SplashScreenActivity"
             android:exported="true">
             <intent-filter>
