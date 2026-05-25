@@ -50,4 +50,13 @@ dependencies {
     implementation ("com.github.bumptech.glide:glide:4.16.0")
     annotationProcessor ("com.github.bumptech.glide:compiler:4.16.0")
     implementation("androidx.recyclerview:recyclerview:1.3.2")
+    // Dots Indicator untuk Onboard
+    implementation("com.tbuonomo:dotsindicator:5.1.0")
+
+    // Retrofit & Gson untuk REST API
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+
+    // Lifecycle Scope untuk Coroutine API
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
 }
