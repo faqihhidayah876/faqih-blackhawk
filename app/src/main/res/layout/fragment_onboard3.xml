@@ -31,6 +31,7 @@
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:text="Ayo Mulai"
+        android:backgroundTint="@color/blue_dark"
         android:layout_marginTop="40dp" />
 
 </LinearLayout>

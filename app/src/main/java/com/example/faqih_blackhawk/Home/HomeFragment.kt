@@ -125,6 +125,39 @@ class HomeFragment : Fragment() {
                 }
                 .show()
         }
+        // --- TOMBOL FAB SIDERA MENU ---
+        binding.fabSideraMenu.setOnClickListener {
+            val options = arrayOf("Catatan Perangkat Desa", "Draft Permohonan Surat")
+
+            MaterialAlertDialogBuilder(requireContext())
+                .setTitle("Pilih Aksi SIDERA")
+                .setItems(options) { dialog, which ->
+                    when (which) {
+                        0 -> {
+                            // Pindah ke Fragment Catatan Desa
+                            requireActivity().supportFragmentManager.beginTransaction()
+                                .replace(
+                                    R.id.fragment_container,
+                                    com.example.faqih_blackhawk.Home.catatan.CatatanDesaFragment()
+                                )
+                                .addToBackStack(null)
+                                .commit()
+                        }
+                        1 -> {
+                            // Pindah ke Fragment Draft Surat
+                            requireActivity().supportFragmentManager.beginTransaction()
+                                .replace(
+                                    R.id.fragment_container,
+                                    com.example.faqih_blackhawk.Home.draft.DraftSuratFragment()
+                                )
+                                .addToBackStack(null)
+                                .commit()
+                        }
+                    }
+                    dialog.dismiss()
+                }
+                .show()
+        }
 
         // Memuat berita dari API
         loadBerita()

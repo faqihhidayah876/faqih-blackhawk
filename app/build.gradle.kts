@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.android.application)
+    id("com.google.devtools.ksp")
 }
 
 android {
@@ -59,4 +60,8 @@ dependencies {
 
     // Lifecycle Scope untuk Coroutine API
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
+    val room_version = "2.6.1"
+    implementation("androidx.room:room-runtime:$room_version")
+    implementation("androidx.room:room-ktx:$room_version")
+    ksp ("androidx.room:room-compiler:$room_version")
 }
