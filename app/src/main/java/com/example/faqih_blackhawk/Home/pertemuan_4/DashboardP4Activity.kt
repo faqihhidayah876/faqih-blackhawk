@@ -127,4 +127,23 @@ class DashboardP4Activity : AppCompatActivity() {
             else -> super.onOptionsItemSelected(item)
         }
     }
+    // 1. Fungsi penangkap saat aplikasi berjalan di background
+    override fun onNewIntent(intent: Intent) {
+        super.onNewIntent(intent)
+        handleNotificationIntent(intent)
+    }
+
+    // 2. Logika eksekutor untuk pindah ke Home Fragment
+    private fun handleNotificationIntent(intent: Intent?) {
+        val targetFragment = intent?.getStringExtra("TARGET_FRAGMENT")
+        if (targetFragment == "HOME_FRAGMENT") {
+            // Bersihkan semua Fragment (Catatan/Draft) yang sedang menumpuk di layar
+            supportFragmentManager.popBackStack(null, androidx.fragment.app.FragmentManager.POP_BACK_STACK_INCLUSIVE)
+
+            // Panggil HomeFragment ke dalam container
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, com.example.faqih_blackhawk.Home.HomeFragment())
+                .commit()
+        }
+    }
 }
