@@ -127,7 +127,12 @@ class HomeFragment : Fragment() {
         }
         // --- TOMBOL FAB SIDERA MENU ---
         binding.fabSideraMenu.setOnClickListener {
-            val options = arrayOf("Catatan Perangkat Desa", "Draft Permohonan Surat")
+            // Kita tambahkan opsi ke-3 di sini
+            val options = arrayOf(
+                "Catatan Perangkat Desa",
+                "Draft Permohonan Surat",
+                "Kamera & Scanner SIDERA" // Fitur Pertemuan 13
+            )
 
             MaterialAlertDialogBuilder(requireContext())
                 .setTitle("Pilih Aksi SIDERA")
@@ -152,6 +157,12 @@ class HomeFragment : Fragment() {
                                 )
                                 .addToBackStack(null)
                                 .commit()
+                        }
+                        2 -> {
+                            // Buka Kamera & Scanner (Pertemuan 13)
+                            // Karena ThirteenthActivity adalah Activity, kita gunakan Intent
+                            val intent = Intent(requireContext(), com.example.faqih_blackhawk.Home.pertemuan_13.ThirteenthActivity::class.java)
+                            startActivity(intent)
                         }
                     }
                     dialog.dismiss()

@@ -6,7 +6,7 @@ import android.content.Context
 import android.content.Intent
 import java.util.Calendar
 
-object ReminderHelper {
+object   ReminderHelper {
     fun setReminder(context: Context, hour: Int, minute: Int, title: String, message: String, targetActivity: Class<*>) {
         val calendar = Calendar.getInstance().apply {
             set(Calendar.HOUR_OF_DAY, hour)
